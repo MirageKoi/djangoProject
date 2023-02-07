@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<ul>
+    {% for object in tasks %}
+        <li id="task-{{ object.id }}"><a href='{{ object.id }}'> {{ object.title }}</a></li>
+    {% endfor %}
+
+</ul>
+{% endblock %}
+
