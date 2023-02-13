@@ -1,52 +1,25 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<style>
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-.navbar li {
-  float: left;
-}
-
-.navbar  li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.navbar li a:hover:not(.active) {
-  background-color: #111;
-}
-
-.active {
-  background-color: #04AA6D;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Bootstrap templates for a training todo web application">
+  <title>Task Tracker</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body>
-<div class="navbar">
-  <ul>
-  <li><a href=" {% url 'homepage' %} ">Home</a></li>
-  <li><a href="{% url 'task_list_view' %}">Tasks</a></li>
-  <li style="float:right"><a class="active" href="#about">Log In</a></li>
-  <li style="float:right"><a href="#contact">Sign Up</a></li>
-</ul>
+{% include '_navbar.html' %}
+<div class="vh-100" id="content">
+  {% block content %}
+  {% endblock %}
 </div>
-
-<br>
-<div>
-{% block content %}
-{% endblock %}
-
-</div>
-
+<script src="js/bootstrap.bundle.js"></script>
 </body>
 </html>

@@ -1,0 +1,134 @@
+{% extends 'base.html' %} 
+
+  {% load static %}
+
+
+{% block content %}
+<div class="container h-100">
+  <div class="row d-flex justify-content-center align-items-start h-100">
+    <div class="col-8">
+      <div class="task-container card shadow">
+        <div class="card-header">
+          <h1 class="h1"><i class="bi bi-list-task"></i><span class="ms-2">Task List</span></h1>
+        </div>
+        <div class="card-body scroll-area" aria-label="Tasks Lists">
+          <table class="table" id="taskList">
+            <thead>
+            <tr>
+              <th scope="col">Assignee</th>
+              <th scope="col">Task Summary</th>
+              <th scope="col" class="d-none d-md-table-cell">Actions</th>
+            </tr>
+            </thead>
+            <tbody id="taskContainer">
+            {% for object in tasks %}
+            <tr class="task" id="task-{{ object.id }}">
+              <td class="align-middle">
+                <img src="https://i.pravatar.cc/350?u=3ae8c8d8" alt="MN" class="rounded-circle"
+                     width="auto" height="42">
+                <span class="ms-1">Meriadoc</span><span class="d-none d-lg-inline-block">&nbsp;Noakes</span>
+              </td>
+              <td class="summary align-middle">
+                <a href="{{ object.id }}">{{object.title}}</a>
+              </td>
+              <td class="actions align-middle d-none d-md-table-cell">
+                <i class="task-action btn bi bi-check-lg disabled" role="button"
+                   data-target="5cb84f9e-7b15-430b-ad15-d5c6f4ddbf6a" data-action="complete"></i>
+                <i class="task-action btn bi bi-trash disabled" role="button"
+                   data-target="5cb84f9e-7b15-430b-ad15-d5c6f4ddbf6a" data-action="delete"></i>
+              </td>
+            </tr>
+            {% endfor %}
+            {% comment %} <tr class="task task-completed" id="be17ad3f-72d0-42cc-909e-bec99c1f7134">
+              <td class="align-middle">
+                <img src="https://i.pravatar.cc/350?u=25656cb3" alt="BT" class="rounded-circle"
+                     width="auto" height="42">
+                <span class="ms-1">Berylla</span><span class="d-none d-lg-inline-block">&nbsp;Twofoot</span>
+              </td>
+              <td class="summary align-middle">
+                <a href="task_detail.html">she hit federal first sister</a>
+              </td>
+              <td class="actions align-middle d-none d-md-table-cell">
+                <i class="task-action btn bi bi-repeat" role="button"
+                   data-target="be17ad3f-72d0-42cc-909e-bec99c1f7134" data-action="reopen"></i>
+                <i class="task-action btn bi bi-trash" role="button"
+                   data-target="be17ad3f-72d0-42cc-909e-bec99c1f7134" data-action="delete"></i>
+              </td>
+            </tr>
+            <tr class="task" id="32d2c9a0-fdfe-4174-81fe-eee632756e46">
+              <td class="align-middle">
+                <img src="https://i.pravatar.cc/350?u=598da43b" alt="MB" class="rounded-circle"
+                     width="auto" height="42">
+                <span class="ms-1">Marmadoc</span><span class="d-none d-lg-inline-block">&nbsp;Brockhouse</span>
+              </td>
+              <td class="summary align-middle">
+                <a href="task_detail.html">future forward law rate exactly</a>
+              </td>
+              <td class="actions align-middle d-none d-md-table-cell">
+                <i class="task-action btn bi bi-check-lg" role="button"
+                   data-target="32d2c9a0-fdfe-4174-81fe-eee632756e46" data-action="complete"></i>
+                <i class="task-action btn bi bi-trash" role="button"
+                   data-target="32d2c9a0-fdfe-4174-81fe-eee632756e46" data-action="delete"></i>
+              </td>
+            </tr>
+            <tr class="task task-completed" id="c82d7d7c-d0a4-4b2a-b0ed-15005e376ce2">
+              <td class="align-middle">
+                <img src="https://i.pravatar.cc/350?u=3251eaa5" alt="MC" class="rounded-circle"
+                     width="auto" height="42">
+                <span class="ms-1">Malva</span><span class="d-none d-lg-inline-block">&nbsp;Chubb-Baggins</span>
+              </td>
+              <td class="summary align-middle">
+                <a href="task_detail.html">growth world direction heart else</a>
+              </td>
+              <td class="actions align-middle d-none d-md-table-cell">
+                <i class="task-action btn bi bi-repeat disabled" role="button"
+                   data-target="c82d7d7c-d0a4-4b2a-b0ed-15005e376ce2" data-action="reopen"></i>
+                <i class="task-action btn bi bi-trash disabled" role="button"
+                   data-target="c82d7d7c-d0a4-4b2a-b0ed-15005e376ce2" data-action="delete"></i>
+              </td>
+            </tr>
+            <tr class="task" id="e35dbfa1-5567-4f02-bf1e-419d0efc696a">
+              <td class="align-middle">
+                <img src="https://i.pravatar.cc/350?u=25656cb3" alt="BT" class="rounded-circle"
+                     width="auto" height="42">
+                <span class="ms-1">Berylla</span><span class="d-none d-lg-inline-block">&nbsp;Twofoot</span>
+              </td>
+              <td class="summary align-middle">
+                <a href="task_detail.html">professional southern everybody special campaign</a>
+              </td>
+              <td class="actions align-middle d-none d-md-table-cell">
+                <i class="task-action btn bi bi-check-lg" role="button"
+                   data-target="e35dbfa1-5567-4f02-bf1e-419d0efc696a" data-action="complete"></i>
+                <i class="task-action btn bi bi-trash" role="button"
+                   data-target="e35dbfa1-5567-4f02-bf1e-419d0efc696a" data-action="delete"></i>
+              </td>
+            </tr>
+            </tbody> {% endcomment %}
+          </table>
+        </div>
+        <div class="card-footer">
+          <nav aria-label="Task list navigation">
+            <ul class="pagination justify-content-center align-middle">
+              <li class="page-item">
+                <a href="" class="page-link disabled"><i class="bi bi-caret-left"></i></a>
+              </li>
+              <li class="page-item"><a href="" class="page-link active">1</a></li>
+              <li class="page-item"><a href="" class="page-link">2</a></li>
+              <li class="page-item"><a href="" class="page-link">3</a></li>
+              <li class="page-item"><a href="" class="page-link">4</a></li>
+              <li class="page-item"><a href="" class="page-link">5</a></li>
+              <li class="page-item">
+                <a href="" class="page-link"><i class="bi bi-caret-right"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+<script src="../js/bootstrap.bundle.js"></script>
+<script src="../js/tasktracker.task.js"></script>
+</body>
+</html>

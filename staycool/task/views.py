@@ -16,13 +16,13 @@ def homepage(request: HttpRequest):
 
 
 def task_list_view(request: HttpRequest):
-    return render(request, "index.html", {"tasks": tasks})
+    return render(request, "task_list.html", {"tasks": tasks})
 
 
-def task_detailed(request, number: int):
+def task_detailed_view(request: HttpRequest, number: int):
     for obj in tasks:
         if obj["id"] == number:
-            return render(request, "single.html", {"object": obj})
+            return render(request, "task_detail.html", {"object": obj})
 
 
 def form_view(request):
