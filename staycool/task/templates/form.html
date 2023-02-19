@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post" action="{% url 'form-view' %}">
+    {% csrf_token %}
+    <label>
+        <input type="text" name="my_name">
+    </label>
+    <button type="submit">Send name</button>
+</form>
+{% endblock %}

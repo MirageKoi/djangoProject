@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <main class="col-10 col-xs-10 col-sm-9 col-md-5 col-xl-4">
+        <h1 class="h3 text-uppercase text-center mb-4">Register new user</h1>
+        <form>
+          <div class="form-floating mb-3">
+            <input type="text"
+                   class="form-control"
+                   id="username"
+                   placeholder="Username"
+                   name="username"/>
+            <label for="username" class="form-label">
+              <i class="bi bi-person"></i>&nbsp;Username
+            </label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email"
+                   class="form-control"
+                   id="email"
+                   placeholder="Email Address"
+                   name="email"/>
+            <label for="email" class="form-label">
+              <i class="bi bi-envelope"></i>&nbsp;Email Address
+            </label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text"
+                   class="form-control"
+                   id="first_name"
+                   placeholder="First Name"
+                   name="first_name"/>
+            <label for="first_name" class="form-label">First Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text"
+                   class="form-control"
+                   id="last_name"
+                   placeholder="Last Name"
+                   name="last_name"/>
+            <label for="last_name" class="form-label">Last Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password"
+                   class="form-control"
+                   id="passwd1"
+                   placeholder="Password"
+                   name="password"/>
+            <label for="passwd1" class="form-label">
+              <i class="bi bi-key"></i>&nbsp;Password
+            </label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password"
+                   class="form-control"
+                   id="passwd2"
+                   placeholder="Confirm"
+                   name="confirm_password"/>
+            <label for="passwd2" class="form-label">
+              <i class="bi bi-lock"></i>&nbsp;Confirm Password
+            </label>
+          </div>
+          <div class="text-center mb-3">
+            Already have an account?&nbsp;<a href="" class="text-decoration-none">Sign In!</a>
+          </div>
+          <div class="d-flex justify-content-center mb-3">
+            <button href="" class="btn btn-lg btn-primary">Sign Up</button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+{% endblock content %}
